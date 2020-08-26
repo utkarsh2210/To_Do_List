@@ -1,29 +1,39 @@
 <html>
     <head>
-
+      <!-- EJS variable, where Title is to be inserted by the server -->
       <title> <%= title %> </title>
-  
+
+      <!-- To include icons using font awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
 
+    <!-- Script to include jquery  -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
+    <!-- Script to include the main css file which contains all the necessary styling for this page -->
     <link rel="stylesheet" type="text/css" href="/css/todo.css">
 
     </head>
     <body>
+        <!-- All the form, tasks and everything is container within this div -->
         <div class="to-do-container">
+
+          <!-- Heading of the List -->
           <h1><i class="fas fa-clipboard-list" style=" color: darkred"></i>To-Do App</h1>
-            
+
+            <!-- Form #1. Includes options required to add a task to the list -->
             <form id="task-input-form" action='/create-task'  method='POST'>
 
+                <!-- This contains the desciption of the task -->
                 <div class="input-container task-desc-container">
                     <label for="description">DESCRIPTION</label>
+                    <!-- "required" added, because a task can't be created without description -->
                     <input id="description" name="description" type="text" placeholder="What do you want to do today?" required> 
-
                 </div>
 
+                <!-- Second input-container, which contains the category & due date selection -->
                 <div class="input-container">
 
+                  <!-- Category Section -->
                   <div class="category">
                     <label for="cat-type">CATEGORY</label>
                     <select id="cat-type" name="category">
@@ -36,6 +46,7 @@
                     </select>
                   </div>
 
+                  <!-- Due date section -->
                   <div class="due-date">
                     <label for="date">DUE DATE</label>
                     <input type="date" id="date" name="date">
@@ -43,31 +54,44 @@
 
                 </div>
 
+                <!-- This is the container for the "Add" & "Delete" Task button -->
                 <div class="btn-container">
                   <button type="submit"><i class="fas fa-plus"></i> ADD TASK </button> 
                     </form>
+                  
+                    <!-- Form #2. It contains the tasks that will be shown
+                    and deleted, once the delete button is pressed -->
                     <form id="task-detail-form" action='/delete-tasks/' method="GET">
                     <div class="del-btn">
                       <a href=""><i class="far fa-trash-alt"></i> DELETE TASKS</a>
                     </div>
                 </div>
-                  
+
+              <!-- This div contains the list of task(s) -->
              <div class="task-container">
+
+              <!-- Loop to display the task data fetched from db -->
                 <% let no_tasks; for(let i of todo_list) { %>
                 <div class="task-items">
 
+                    <!-- Checkbox -->
                     <input type="checkbox" id="<%= i._id %>">
+
+                    <!-- Task description & deadline -->
                     <div class="task">
                     <p><%= i.description %></p>
                     <p><i class="far fa-calendar-alt"></i>
+                      <!-- If there is no date specified, then it shows "No Deadline" -->
                       <% if(i.date == null) { %>
                       <%= "NO DEADLINE" %> 
                       <% } else { %>
+                      <!-- Date converted to string in order to show only the required part of date -->
                       <%= i.date.toString().toUpperCase().substring(0,15) %>
                       <% } %>
                     </p>
                     </div>
                     
+                    <!-- Type of the task, taken from category field, is shown over here -->
                     <div class="task-type">
                     <%= i.category.toUpperCase() %>
                     </div>
@@ -78,6 +102,7 @@
             
         </div>
 
+        <!-- Script to include VantaJs background -->
         <script src="./js/three.r119.min.js"></script>
         <script src="./js/vanta.fog.min.js"></script>
         <script>
@@ -94,6 +119,8 @@
             baseColor: 0x784242
           })
         </script>
+
+        <!-- Script to include js file for doing changes to the view -->
          <script type="text/javascript" src="./js/todo.js"></script>
 
     </body>
