@@ -51,6 +51,31 @@ app.post('/create-task', function(req, res){
 
 });
 
+app.get('/delete-tasks/', function(req, res)
+{
+    let ids=new Array();
+    
+    // To store all the ids from req.query to "ids" variable 
+    for(let i in req.query)
+    {
+        ids.push(req.query[i]);
+    }
+
+    // deleteMany to delete multiple records at once 
+    // becase sometimes there will be multiple tasks to be deleted
+    // "$in" is used to search for id in the given list of ids 
+    Todolist.deleteMany({_id:{$in:ids}}, function(error)
+    {
+        if(error)
+        {
+            console.log('Unable to delete from the database.');
+            return;
+        }
+        
+        return res.redirect('back');
+    })
+});
+
 app.listen(port, function(err){
     if(err)
     {
