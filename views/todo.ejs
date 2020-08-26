@@ -1,0 +1,28 @@
+<html>
+    <head>
+
+      <title> <%= title %> </title>
+  
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="/css/todo.css">
+
+    </head>
+    <body>
+        <div class="to-do-container">
+          <h1><i class="fas fa-clipboard-list" style=" color: darkred"></i>To-Do App</h1>
+            
+            <form id="task-input-form" action='/create-task'  method='POST'>
+
+                <div class="input-container task-desc-container">
+                    <label for="description">DESCRIPTION</label>
+                    <input id="description" name="description" type="text" placeholder="What do you want to do today?" required> 
+
+                </div>
+            </form>
+        </div>
+    </body>
+</html>
+              
