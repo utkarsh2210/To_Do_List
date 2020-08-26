@@ -1,3 +1,4 @@
+/* To apply font styling to all the elements */
 *{
   font-family: "Comic Sans MS";
 }
@@ -8,16 +9,22 @@ p{
     margin: 0px;
     padding: 0px;
   }
+/***************************************************************************/
 
-  h1{
+/****** Heading For The List ********/
+h1{
     text-align: center;
   }
 
-  h1 i{
+h1 i{
     margin-right: 10px;
   }
 
-  .to-do-container{
+/*****************************************************************************/
+
+/************** To-Do List Box ********************/
+
+.to-do-container{
     height: auto;
     margin: 0px auto;
     width: 50%;
@@ -26,17 +33,19 @@ p{
     flex-direction: column;
   }
 
-  .input-container {
+/**************** Input Section ***************/
+
+.input-container {
       border: solid 1px #757070;
       position: relative;
     }
     
-  .input-container:nth-child(2){
+.input-container:nth-child(2){
     border-top: none;
     display: flex;
   }
 
-    .input-container input {
+.input-container input {
       border: none;
       font-size: 13px;
         outline: 0;
@@ -45,7 +54,7 @@ p{
         background-color: transparent;
     }
 
-  .input-container select, input[type="date"] {
+.input-container select, input[type="date"] {
       border: none;
       font-size: 14px;
       outline: 0;
@@ -56,12 +65,12 @@ p{
       background-color: transparent;
   }
 
-  input:focus , select:focus {
+input:focus , select:focus {
       transition: 0.4s;
       background-color: rgb(186, 195, 197);
   }
 
-  .input-container label {
+.input-container label {
           position: absolute;
         font-size: 13px;
         left: 14px;
@@ -69,27 +78,31 @@ p{
         font-weight: 550;
     }
   
-  .due-date label{
+.due-date label{
     left: 51.5%;
   }
 
-  .category, .due-date{
+.category, .due-date{
     width:50%;
     border: none;
   }
 
-  .category{
+.category{
     border-right: 1px solid#757070;
   }
 
-  .btn-container{
+/*********************************************************************************/
+
+/************ Button Section *****************/
+
+.btn-container{
     margin: 10px auto;
     display: flex;
     justify-content: center;
     height: auto;
   }
 
-  button{
+button{
     display: flex;
     align-items: center;
     width: 150px;
@@ -100,7 +113,7 @@ p{
     cursor: pointer;
   }
 
-  .del-btn{
+.del-btn{
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -110,40 +123,44 @@ p{
     color: white;
   }
 
-  .btn-container i{
+.btn-container i{
     font-weight: 700;
     font-size: 17px;
     margin: 0px 10px;
     margin-right: 12px;
   }
 
-  .del-btn i{
+.del-btn i{
     margin-right: 7px;
     color: rgb(253, 241, 241);
   }
 
-  .del-btn a{
+.del-btn a{
     text-decoration: none;
     color: white;
   }
 
-  button:nth-child(1){
+button:nth-child(1){
     background-color: #333131;
   }
 
-  .del-btn{
+.del-btn{
     background-color: #e41313;
   }
 
-  button:nth-child(1):hover{
+button:nth-child(1):hover{
     background-color: #1d1c1c;
   }
 
-  .del-btn:hover{
+.del-btn:hover{
     background-color: #c30c0c;
   }
 
-  .task-container{
+/***********************************************************************************/
+
+/************** Task(s) Show Section ****************/
+
+.task-container{
     margin: auto;
      margin-bottom: 15px;
      display: flex;
@@ -151,7 +168,7 @@ p{
      width: 95%;
   }
 
-  .task-items{
+.task-items{
     position: relative;
     display: flex;
     align-items: center;
@@ -160,31 +177,31 @@ p{
     min-height: 50px;
   }
 
-  .task{
+.task{
     margin-left: 20px;
     width: 70%;
     margin-bottom: 3px;
   }
 
-  .task p:nth-child(1){
+.task p:nth-child(1){
     font-size: 16px;
     color: #4e4d4d;
     font-weight: 550;
     margin-top: 2px;
   }
 
-  .task p:nth-child(2){
+.task p:nth-child(2){
     font-size: 11px;
     margin-top: 3px;
     color: #656262;
   }
 
-  .task i {
+.task i {
     margin-right: 4px;
     font-size: 14px;
   }
 
-  .task-type{
+.task-type{
     position: absolute;
     display: flex;
     right: 2%;
@@ -197,6 +214,9 @@ p{
     padding: 1.5% 1.5%;
   }
 
-  input[type=checkbox]:checked + .task > p{
+/* To strike the content of selected checkbox */
+input[type=checkbox]:checked + .task > p{
     text-decoration: line-through;
   }
+
+/***********************************************************************************/
