@@ -81,6 +81,7 @@ p{
   .category{
     border-right: 1px solid#757070;
   }
+
   .btn-container{
     margin: 10px auto;
     display: flex;
@@ -140,4 +141,62 @@ p{
 
   .del-btn:hover{
     background-color: #c30c0c;
+  }
+
+  .task-container{
+    margin: auto;
+     margin-bottom: 15px;
+     display: flex;
+     flex-direction: column;
+     width: 95%;
+  }
+
+  .task-items{
+    position: relative;
+    display: flex;
+    align-items: center;
+    border-top: 1px solid #757070;
+    padding: 5px;
+    min-height: 50px;
+  }
+
+  .task{
+    margin-left: 20px;
+    width: 70%;
+    margin-bottom: 3px;
+  }
+
+  .task p:nth-child(1){
+    font-size: 16px;
+    color: #4e4d4d;
+    font-weight: 550;
+    margin-top: 2px;
+  }
+
+  .task p:nth-child(2){
+    font-size: 11px;
+    margin-top: 3px;
+    color: #656262;
+  }
+
+  .task i {
+    margin-right: 4px;
+    font-size: 14px;
+  }
+
+  .task-type{
+    position: absolute;
+    display: flex;
+    right: 2%;
+    color: white;
+    font-size: 13px;
+    width: 70px;
+    height: 30%;
+    justify-content: center;
+    align-items: center;
+    padding: 1.5% 1.5%;
+  }
+
+  input[type=checkbox]:checked + .task > p{
+    text-decoration: line-through;
   }

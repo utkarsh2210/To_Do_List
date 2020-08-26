@@ -51,7 +51,33 @@
                       <a href=""><i class="far fa-trash-alt"></i> DELETE TASKS</a>
                     </div>
                 </div>
+                  
+             <div class="task-container">
+                <% let no_tasks; for(let i of todo_list) { %>
+                <div class="task-items">
+
+                    <input type="checkbox" id="<%= i._id %>">
+                    <div class="task">
+                    <p><%= i.description %></p>
+                    <p><i class="far fa-calendar-alt"></i>
+                      <% if(i.date == null) { %>
+                      <%= "NO DEADLINE" %> 
+                      <% } else { %>
+                      <%= i.date.toString().toUpperCase().substring(0,15) %>
+                      <% } %>
+                    </p>
+                    </div>
+                    
+                    <div class="task-type">
+                    <%= i.category.toUpperCase() %>
+                    </div>
+                </div>
+                <% no_tasks++; } %>
+            </div>
+          </form>
+            
         </div>
+         <script type="text/javascript" src="./js/todo.js"></script>
+
     </body>
 </html>
-              
