@@ -4,6 +4,7 @@ const port = 8000;
 
 const db = require('./config/mongoose');
 const Todolist = require('./models/todolist');
+const { findOneAndUpdate } = require('./models/todolist');
 
 const app = express();
 
@@ -13,15 +14,17 @@ app.set('views', './views');
 app.use(express.urlencoded());
 app.use(express.static('assets'));
 
+// To display the tasks on the website
 app.get('/', function(req, res){
 
+    // To find the records of tasks in the database
     Todolist.find({}, function(err, tasks){
         if(err)
         {
             console.log('Error in retrieving the data from the database');
             return;
         }
-
+        // When found, they are rendered through the todo.ejs
         return res.render('todo', 
         { 
             title: 'To Do List' , 
@@ -30,9 +33,10 @@ app.get('/', function(req, res){
     });
 });
    
-
+// To create a record of the task in the database, based upon the values given by the user
 app.post('/create-task', function(req, res){
 
+    // Function to create the task
     Todolist.create({
         description: req.body.description,
         category: req.body.category,
@@ -44,13 +48,16 @@ app.post('/create-task', function(req, res){
             return; 
         }
 
+        // To display the created record in the console
         console.log('************', newTask);
 
+        // To go back to the main page
         return res.redirect('/');
     });
 
 });
 
+// Delete task(s)/records function
 app.get('/delete-tasks/', function(req, res)
 {
     // To store all the ids from req.query to "ids" variable
@@ -75,6 +82,7 @@ app.get('/delete-tasks/', function(req, res)
     })
 });
 
+// To connect to the server
 app.listen(port, function(err){
     if(err)
     {
