@@ -29,17 +29,15 @@ for (let box of document.querySelectorAll('.task-type'))
 
 function delete_Url(ids)
 {
-    
     // If no task is selected, yet the delete button is clicked, then the user will be alerted.
     if(ids.length==0)
     {
-        window.alert('Please select a task.');
+        window.alert('Please select a task');
     }
-   
     // This is the link which will be sent to the server in the req.query form to delete the task(s)
     link="/delete-tasks/?";
     let count=0;
-
+    
     // loop to make the req.query link in the form of  "/delete-tasks/?id0=...&id1=....."
     for(let id of ids)
     {

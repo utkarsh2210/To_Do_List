@@ -18,7 +18,7 @@ app.get('/', function(req, res){
     Todolist.find({}, function(err, tasks){
         if(err)
         {
-            console.log('Error in retrieving the data from database');
+            console.log('Error in retrieving the data from the database');
             return;
         }
 
@@ -53,14 +53,13 @@ app.post('/create-task', function(req, res){
 
 app.get('/delete-tasks/', function(req, res)
 {
+    // To store all the ids from req.query to "ids" variable
     let ids=new Array();
-    
-    // To store all the ids from req.query to "ids" variable 
     for(let i in req.query)
     {
         ids.push(req.query[i]);
-    }
-
+    } 
+     
     // deleteMany to delete multiple records at once 
     // becase sometimes there will be multiple tasks to be deleted
     // "$in" is used to search for id in the given list of ids 
@@ -68,10 +67,10 @@ app.get('/delete-tasks/', function(req, res)
     {
         if(error)
         {
-            console.log('Unable to delete from the database.');
+            console.log('Error in deleting the data from the database.');
             return;
         }
-        
+
         return res.redirect('back');
     })
 });
