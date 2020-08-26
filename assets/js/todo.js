@@ -1,3 +1,4 @@
+// To change the color of category-type-box in the display task container
 for (let box of document.querySelectorAll('.task-type'))
 {
     if(box.innerText=='CHOOSE')
