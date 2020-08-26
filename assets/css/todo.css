@@ -81,3 +81,63 @@ p{
   .category{
     border-right: 1px solid#757070;
   }
+  .btn-container{
+    margin: 10px auto;
+    display: flex;
+    justify-content: center;
+    height: auto;
+  }
+
+  button{
+    display: flex;
+    align-items: center;
+    width: 150px;
+    font-family: "Comic Sans MS";
+    margin: 10px 5px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+  }
+
+  .del-btn{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 10px 5px;
+    width: 160px;
+    margin: 10px 8px;
+    color: white;
+  }
+
+  .btn-container i{
+    font-weight: 700;
+    font-size: 17px;
+    margin: 0px 10px;
+    margin-right: 12px;
+  }
+
+  .del-btn i{
+    margin-right: 7px;
+    color: rgb(253, 241, 241);
+  }
+
+  .del-btn a{
+    text-decoration: none;
+    color: white;
+  }
+
+  button:nth-child(1){
+    background-color: #333131;
+  }
+
+  .del-btn{
+    background-color: #e41313;
+  }
+
+  button:nth-child(1):hover{
+    background-color: #1d1c1c;
+  }
+
+  .del-btn:hover{
+    background-color: #c30c0c;
+  }
