@@ -28,6 +28,7 @@ for (let box of document.querySelectorAll('.task-type'))
     }
 }
 
+//The url formation function
 function delete_Url(ids)
 {
     // If no task is selected, yet the delete button is clicked, then the user will be alerted.
