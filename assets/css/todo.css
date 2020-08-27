@@ -39,6 +39,8 @@ h1 i{
 .input-container {
       border: solid 1px #757070;
       position: relative;
+      width: 90%;
+      margin: 0 auto;
     }
     
 .input-container:nth-child(2){
@@ -166,7 +168,7 @@ button:nth-child(1):hover{
      margin-bottom: 15px;
      display: flex;
      flex-direction: column;
-     width: 95%;
+     width: 90%;
   }
 
 .task-items{
