@@ -1,0 +1,46 @@
+@media screen and (max-width: 990px) {
+
+    .task-type{
+        width: 55px;
+        font-size: 10.5px;
+    }
+
+    .task p:nth-child(1){
+        font-size: 14px;
+    }
+
+    .task p:nth-child(2){
+        font-size: 9px;
+      }
+    
+    .task i {
+        font-size: 13px;
+      }
+    
+}
+
+
+@media screen and (max-width: 600px) {
+
+    button{
+        width: 110px;
+        font-size: 12px;
+    }
+    .btn-container i{
+        font-size: 12px;
+        margin: 0px 5px;
+    }
+    .del-btn{
+        width: 120px;
+        font-size: 12px;
+    }
+
+    .task p:nth-child(1){
+        font-size: 12px;
+    }
+    
+    .task i {
+        font-size: 12px;
+      }
+    
+}
